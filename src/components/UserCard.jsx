@@ -16,8 +16,8 @@ const UserCard = ({ user, showButton, forView, viewProfile, forRequest, requestI
     dispatch(addRequest());
   }
 
-  const incomingRequest = async (status, user) => {
-    const res = await axios.post(`${BASE_URL}/request/review/${status}/${user?._id}`, {}, { withCredentials: true })
+  const incomingRequest = async (status, requestId) => {
+    const res = await axios.post(`${BASE_URL}/request/review/${status}/${requestId}`, {}, { withCredentials: true })
     dispatch(removeRequest(requestId));
     dispatch(addConnections());
   }
@@ -59,7 +59,7 @@ const UserCard = ({ user, showButton, forView, viewProfile, forRequest, requestI
 
         {
           forRequest ? <div className="card-actions justify-evenly">
-            <button className="btn btn-primary" onClick={() => incomingRequest("accepted", user)} >Accept</button>
+            <button className="btn btn-primary" onClick={() => incomingRequest("accepted", requestId)} >Accept</button>
             <button className="btn btn-secondary" onClick={() => incomingRequest("accepted", requestId)} >Reject</button>
           </div> : ""
         }
