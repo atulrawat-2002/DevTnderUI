@@ -56,7 +56,6 @@ const Connections = () => {
                         <div className=" w-xs  h-96 " style={cardStyle}>
                         <UserCard user={connection} showbutton={false} forView={true} viewProfile={true} />
                         </div>
-                        <span style={connectionStyle} className="bg-fuchsia-600 shadow-lg drop-shadow-green-600" ></span>
                         <div className=" w-xs " style={cardStyle}>
                         <UserCard user={{ firstName, lastName, photoUrl, age}} showbutton={false} forView={true} viewProfile={true}/>
                     </div>

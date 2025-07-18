@@ -41,13 +41,13 @@ const UserCard = ({ user, showButton, forView, viewProfile, forRequest, requestI
           src={photoUrl}
           alt={firstName} />
       </figure>
-      <div className="card-body">
-        <h2 className="card-title"> {`${firstName} ${lastName}`} </h2>
+      <div className="card-body ">
+        <h2 className="card-title break-all border border-b-fuchsia-500 "> {`${firstName} ${lastName}`} </h2>
         {age && <h3>Age: {age}</h3>}
         {gender && <h3>Gender: {gender}</h3>}
         {skills && <ul>
           {skills.map((skill) => <li> {skill} </li>)}
-        </ul>}
+        </ul>} 
         <p> {about} </p>
 
         {
@@ -73,15 +73,15 @@ const UserCard = ({ user, showButton, forView, viewProfile, forRequest, requestI
       src={photoUrl}
       alt={firstName} />
   </figure>
-  <div className="card-body flex min-w-1/6 max-w-1/2">
-    <h3 className="card-title">{ `${firstName} ${lastName}` }</h3>
+  <div className="card-body flex min-w-1/6 max-w-1/2 box-border ">
+    <h3 className="card-title  ">{ `${firstName} ${lastName}` }</h3>
     { age && <p>Age: {age}</p>}
     { gender && <p>Gender: {gender}</p>}
     { skills && <p>Skills: {skills}</p>}
     { about && <p>About: {about}</p>}
     <div className="card-actions justify-end">
       {
-        viewProfile ? <Link > <button className="btn btn-block btn-primary">Visit Profile</button> </Link> : <Link to='/profile' state={{edit: true}} className="btn btn-block btn-primary" ><button className="btn btn-block btn-primary">Edit</button></Link>
+        viewProfile ? "" : <Link to='/profile' state={{edit: true}} className="btn btn-block btn-primary" ><button className="btn btn-block btn-primary">Edit</button></Link>
       }
     </div>
   </div>
